@@ -49,7 +49,8 @@ fn main() {
     if is_male && is_above_18 {
         println!("You are a legal male");
     }
-
+    
+    /* ----------STRINGS----------- */
     let greeting: String = String::from("Hello world");
     println!("{}", greeting);
     //simple till here
@@ -58,18 +59,23 @@ fn main() {
 
     // let char1:Option<char>= greeting.chars().nth(0);
     // println!("char1:{}", char1);
+    // ----------Not Allowed--------------
 
     /*
-    String manipulation in Rust is complex
-    to allow string manipulation we do something like this
+    *  String manipulation in Rust is complex
+    *  to allow string manipulation we do something like this
     */
 
-    let char1   = greeting.chars().nth(1000);
+    let char1 = greeting.chars().nth(1);//nth([index])----passing the index 0-n
 
     match char1 {
-        Some(c)=>println!("{}",c),
-        None=> println!("No character at index 1000"),
+        Some(c) => println!("{}", c),
+        None => println!("No character at index 1000"),
     }
-
     /* This is a special way of decalring the string and maknig changes to it */
+    //----------------Allowed-----------------
+
+
+    let char1: Option<char> = greeting.chars().nth(0);//nth([index])-----passing the index 0-n
+    println!("char1:{}", char1.unwrap());
 }
